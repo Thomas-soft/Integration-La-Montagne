@@ -1,0 +1,257 @@
+.main-container
+{
+    margin: 0 auto;
+    nav
+    {
+        &:hover .menus li:not(:hover)
+        {
+            background: none;
+            color: $second-color;
+        }
+
+
+        @include space-between;
+
+        color: $second-color;
+        background-color: $transparency;
+        min-height: 10vh;
+
+        li
+        {
+            cursor: pointer;
+            transition: 0.15s ease-in-out;
+        }
+        ul
+        {
+            @include space-between;
+        }
+        .menus
+        {
+            li
+            {
+                @include center;
+                @include title;
+                height: 10vh;
+                padding: 40px 10px;
+                text-align: center;
+                font-size: 1.1rem;
+                width: max-content;
+     
+                &:first-child
+                {
+                    background-color: $second-color;
+                    color: $main-color;
+                }
+                &:hover
+                {
+                    background-color: $second-color;
+                    color: $main-color;
+                }
+            }
+        }
+        .social
+        {
+            width: 25%;
+            margin-right: 20px;
+            li
+            {
+                display: flex;
+                justify-content: space-around;
+
+                min-width: 2rem;
+    
+                &:hover
+                {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    .container
+    {
+        background-color: $second-color;
+
+        .contain-top
+        {
+            max-width: 80%;
+            margin: 0 auto;
+
+            img
+            {
+                @include center;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .date
+            {
+                position: relative;
+                text-align: center;
+                padding: 50px 0;
+            }
+            .date::before, .date::after
+            {
+                position: absolute;
+                content: '';
+                background-color: $main-color;
+                width: 40%;
+                height: 1px;
+                top: 50%;
+            }
+            .date::before
+            {
+                left: 0;
+            }
+            .date::after
+            {
+                right: 0;
+            }
+
+            h2
+            {
+                @include title;
+                text-align: center;
+                font-size: 3rem;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            .info
+            {
+                padding: 50px 0;
+                max-width: 700px;
+                margin: 0 auto;
+                line-height: 200%;
+                text-align: center;
+                font-style: italic;
+                font-family: system-ui, sans-serif;
+            }
+        }
+
+        .contain-bottom
+        {
+            display: flex;
+            justify-content: space-between;
+
+            .contain
+            {
+                padding: 40px;
+                border-top: 1px solid $border-color;
+                &:first-child
+                {
+                    border-right: 1px solid $border-color;
+                }
+            }
+
+            img
+            {
+                @include center;
+                margin: 0 auto;
+                width: 100%;
+            }
+
+            .date
+            {
+                position: relative;
+                padding-bottom: 40px;
+            }
+            p, h2
+            {
+                text-align: center;
+            }
+            h2
+            {
+                @include title;
+            }
+            .info
+            {
+                padding: 20px 0;
+                font-family: system-ui, sans-serif;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1100px)
+{
+    .main-container
+    {
+        .social
+        {
+            display: none;
+        }
+
+        nav
+        {
+            justify-content: center;
+
+            .menus
+            {
+                width: 100%;
+                li
+                {
+                    font-size: 1rem;
+                    width: 100%;
+                }
+                
+            }
+        }
+
+        .contain-top .contain .text-contain
+        {
+            .date::before, .date::after
+            {
+                width: 25%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px)
+{
+    .header-container
+    {
+        .contain
+        {
+            h1
+            {
+                font-size: 3rem;
+            }
+            p
+            {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+    }
+
+    .main-container nav .menus li
+    {
+        
+        font-size: 0.8rem;
+    }
+
+    .main-container
+    {
+        .container .contain-top
+        {
+            h2
+            {
+                font-size: 1.5rem;
+            }
+        }
+
+        .container .contain-bottom
+        {
+            h2
+            {
+                font-size: 1.5rem;
+            }
+        }
+        .contain-bottom
+        {
+            flex-direction: column;
+        }
+    }
+}

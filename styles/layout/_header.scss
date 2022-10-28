@@ -1,0 +1,50 @@
+.header-container
+{
+    @include center;
+    min-height: 90vh;
+    text-align: center;
+
+    color: $second-color;
+
+    .contain
+    {
+
+        padding: 50px 0;
+
+        h1
+        {
+            @include title;
+            font-size: 5rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+        p
+        {
+            padding: 80px 0;
+        }
+        a
+        {
+            @include center;
+            margin: 0 auto;
+
+            border: 2px solid $second-color;
+            border-radius: 1000px;
+            width: 100px;
+            height: 100px;
+            font-size: 2.5rem;
+        }
+
+        opacity: 0;
+        transform: translateY(45px);
+        animation: headerAnim 1s ease-out forwards;
+
+        @keyframes headerAnim
+        {
+            to
+            {
+                opacity: 1;
+                transform: translateY(0);
+            }    
+        }
+    }
+}

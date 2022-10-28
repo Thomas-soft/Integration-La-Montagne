@@ -1,0 +1,131 @@
+footer
+{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    margin: 40px auto;
+    background-color: $second-color;
+
+    .form-container, .infos-container
+    {
+        width: 100%;
+    }
+    .form-container
+    {
+        padding: 40px;
+    }
+
+    form
+    {
+        .contain
+        {
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+
+            label
+            {
+                @include title;
+            }
+
+            input, textarea
+            {
+                margin: 10px 0;
+                padding: 15px;
+                border: 1px solid $main-color;
+                
+                &:focus
+                {
+                    border-radius: 10px;
+                }
+                
+                transition: 0.3s ease-in-out;
+            }
+            
+            textarea
+            {
+                height: 200px;
+                resize: none;
+            }
+        }
+    }
+
+    .infos-container
+    {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+
+        .contain
+        {
+            display: flex;
+            align-items: center;
+
+            p
+            {
+                margin: 20px;
+            }
+
+            border: 1px solid $border-color;
+
+            ul
+            {
+                display: flex;
+                align-items: center;
+
+                li
+                {
+                    @include center;
+
+                    margin: 5px;
+                    width: 40px;
+                    height: 40px;
+                    border: 1px solid $border-color;
+                    border-radius: 50px;
+
+                    i
+                    {
+                        @include center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px)
+{
+    footer
+    {
+        display: flex;
+        flex-direction: column;
+
+        .infos-container
+        {
+            .contain
+            {
+                display: grid;
+                grid-template-columns: 30% 70%;
+
+                p
+                {
+                    font-size: 0.8rem;
+                    max-width: 100px;
+                }
+            }
+        }
+
+        ul
+        {
+            li
+            {
+                margin: 0;
+                width: 20px;
+                height: 20px;
+            }
+            i
+            {
+                font-size: 0.7rem;
+            }
+        }
+    }
+}
